@@ -91,6 +91,10 @@ body {
   color: var(--accent-text-color);
 }
 
+.current-nav {
+  color: var(--accent-text-color);
+}
+
 .contact-link:hover,
 .contact-link:focus {
   color: var(--accent-text-color);
