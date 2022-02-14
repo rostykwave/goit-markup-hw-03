@@ -26,6 +26,20 @@ body {
   background-color: var(--primary-bg);
 }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn {
   font-family: inherit;
   cursor: pointer;
@@ -35,6 +49,8 @@ body {
 
 .list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
@@ -57,6 +73,10 @@ body {
 }
 
 /* Header */
+.header {
+  border-bottom: 1px solid #ececec;
+  background-color: var(--primary-bg);
+}
 /* Logo */
 .logo {
   font-family: var(--secondary-font);
@@ -135,6 +155,9 @@ body {
 }
 
 /* Section */
+.section {
+  padding: 94px 0;
+}
 
 .section-title {
   font-size: 36px;
@@ -152,6 +175,10 @@ body {
   text-transform: uppercase;
 
   color: var(--secondary-txt);
+}
+
+.features.section {
+  padding-bottom: 0;
 }
 
 /* Чем мы занимаемся */
@@ -192,6 +219,12 @@ body {
 .portfolio-btn:focus {
   color: var(--secondary-btn-txt);
   background-color: var(--secondary-btn-bgc);
+}
+
+/* Portfolio cards */
+
+.portfolio-item {
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
 
 .portfolio-title {
