@@ -13,7 +13,11 @@
 
   --primary-bg: #fff;
   --secondary-bg: #f5f4fa;
-  --footer-bg-color: #2f303a;
+  --footer-bgc: #2f303a;
+
+  /* card-set-gap */
+  --features-card-set-gap: 30px;
+  --portfolio-card-set-gap: 30px;
 }
 
 body {
@@ -33,6 +37,12 @@ p {
   margin: 0;
 }
 
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -40,6 +50,7 @@ p {
 }
 
 .btn {
+  display: inline-block;
   font-family: inherit;
   cursor: pointer;
 
@@ -73,9 +84,6 @@ p {
 
 /* Header */
 .header {
-  display: flex;
-  align-items: center;
-
   border-bottom: 1px solid #ececec;
   background-color: var(--primary-bg);
 }
@@ -95,25 +103,26 @@ p {
 }
 
 /* Site-Navigation */
-
+.main-nav {
+  display: flex;
+  align-items: center;
+}
 .nav {
-  margin-left: 93px;
+  display: flex;
+  align-items: center;
 }
 .site-nav {
   display: flex;
-}
 
+  margin-left: 94px;
+}
 .nav-item + .nav-item {
   margin-left: 50px;
 }
 
-.nav-item {
-}
-
 .nav-link {
-  padding: 32px 0;
   display: block;
-
+  padding: 32px 0;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -123,11 +132,11 @@ p {
 
 /* Contact-navigation */
 
-.contact {
+.contact-nav {
   display: flex;
+
   margin-left: auto;
 }
-
 .contact-item + .contact-item {
   margin-left: 50px;
 }
@@ -156,19 +165,27 @@ p {
 /* Main */
 /* Hero */
 .hero {
+  text-align: center;
+
   background-color: #2f303a;
 }
 .hero-title {
+  margin-bottom: 30px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
   color: #ffffff;
 }
 .hero-btn {
+  padding: 10px 32px;
+  border-radius: 4px;
+
+  justify-content: center;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -189,6 +206,8 @@ p {
 }
 
 .section-title {
+  margin-bottom: 50px;
+
   font-size: 36px;
   line-height: 1.167;
   text-align: center;
@@ -204,9 +223,19 @@ p {
 
 .features-list {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--features-card-set-gap));
+  margin-top: calc(-1 * var(--features-card-set-gap));
+}
+
+.features-item {
+  flex-basis: calc(100% / 4 - var(--features-card-set-gap));
+  margin-left: var(--features-card-set-gap);
+  margin-top: var(--features-card-set-gap);
 }
 
 .features-title {
+  margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
@@ -220,6 +249,10 @@ p {
   display: flex;
 }
 
+.services-item + .services-item {
+  margin-left: 30px;
+}
+
 /* Наша команда */
 .command-section {
   background-color: var(--secondary-bg);
@@ -227,9 +260,25 @@ p {
 
 .command-list {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
+.command-item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+
+  background-color: #fff;
+}
+
+.command-content {
+  padding: 30px 0;
+}
 .command-title {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -247,6 +296,7 @@ p {
 /* Portfolio */
 
 .portfolio-btn {
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -268,7 +318,7 @@ p {
   display: flex;
   justify-content: center;
 
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 .portfolio-filters .item + .item {
   margin-left: 8px;
@@ -282,17 +332,20 @@ p {
   display: flex;
   flex-wrap: wrap;
 
-  margin-left: -30px;
-  margin-top: -30px;
+  margin-left: calc(-1 * var(--portfolio-card-set-gap));
+  margin-top: calc(-1 * var(--portfolio-card-set-gap));
 }
 
 .portfolio-item {
-  flex-basis: calc((100%-90px / 3);
-  margin-left: 30px;
-  margin-top: 30px;
+  flex-basis: calc(100% / 3 - var(--portfolio-card-set-gap));
+  margin-left: var(--portfolio-card-set-gap);
+  margin-top: var(--portfolio-card-set-gap);
   border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
 
+.portfolio-content {
+  padding: 20px 24px;
+}
 .portfolio-title {
   font-size: 18px;
   line-height: 2;
@@ -307,13 +360,20 @@ p {
 
 /* Footer */
 .footer {
-  background-color: var(--footer-bg-color);
+  padding: 60px 0;
+
+  background-color: var(--footer-bgc);
 }
 .footer-logo {
+  display: block;
+  margin-bottom: 20px;
+
   color: #ffffff;
 }
 
 .address-link {
+  margin-bottom: 9px;
+
   font-style: normal;
 
   color: rgba(255, 255, 255, 0.6);
