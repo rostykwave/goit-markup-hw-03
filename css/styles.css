@@ -165,6 +165,7 @@ img {
 /* Main */
 /* Hero */
 .hero {
+  padding: 200px 0;
   text-align: center;
 
   background-color: #2f303a;
@@ -340,11 +341,14 @@ img {
   flex-basis: calc(100% / 3 - var(--portfolio-card-set-gap));
   margin-left: var(--portfolio-card-set-gap);
   margin-top: var(--portfolio-card-set-gap);
-  border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
 
 .portfolio-content {
   padding: 20px 24px;
+
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  border-left: 1px solid rgba(238, 238, 238, 1);
+  border-right: 1px solid rgba(238, 238, 238, 1);
 }
 .portfolio-title {
   font-size: 18px;
@@ -370,10 +374,10 @@ img {
 
   color: #ffffff;
 }
-
-.address-link {
+.address-item {
   margin-bottom: 9px;
-
+}
+.address-link {
   font-style: normal;
 
   color: rgba(255, 255, 255, 0.6);
